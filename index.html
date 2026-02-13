@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Last Summer Promise</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <header class="top-bar">
+        <div class="title-wrap">
+          <h1 id="game-title">Last Summer Promise</h1>
+          <p id="game-subtitle">A 2D anime-style visual novel</p>
+        </div>
+        <div class="controls">
+          <label for="language-select" id="language-label">Language</label>
+          <select id="language-select" aria-label="Language selector">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+            <option value="ja">日本語</option>
+          </select>
+          <button id="music-toggle" class="btn">♪ Music: Off</button>
+        </div>
+      </header>
+
+      <main>
+        <section id="main-menu" class="panel visible">
+          <div class="hearts" aria-hidden="true">❤ ❤ ❤ ❤ ❤</div>
+          <h2 id="menu-title">Main Menu</h2>
+          <p id="menu-description">
+            Yamada Isey has returned to the city for one final summer. Can he reconnect
+            with his lost friends—and find love?
+          </p>
+          <div class="menu-buttons">
+            <button id="start-btn" class="btn primary">Start Story</button>
+            <button id="help-btn" class="btn">How to Play</button>
+          </div>
+          <p id="help-text" class="help-text hidden">
+            Read the story text and choose your path. Your decisions change friendships,
+            romance, and endings.
+          </p>
+        </section>
+
+        <section id="vn-screen" class="panel hidden">
+          <div id="scene-backdrop" class="scene-backdrop morning"></div>
+          <div class="character-layer">
+            <div id="character-card" class="character-card hidden">
+              <h3 id="character-name"></h3>
+              <p id="character-mood"></p>
+            </div>
+          </div>
+          <div class="dialogue-box">
+            <h2 id="scene-title"></h2>
+            <p id="scene-text"></p>
+            <div id="choices" class="choices"></div>
+            <button id="next-btn" class="btn primary hidden">Continue</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
