@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Whisper Log - Forest Recording Horror</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="overlay">
+    <h1>WHISPER LOG</h1>
+    <p>You are an audio recorder investigating disappearances linked to an ancient witch.</p>
+    <ul>
+      <li><strong>Desktop</strong>: WASD move, mouse look, Shift jog</li>
+      <li><strong>Mobile</strong>: Left joystick move, swipe right side to look</li>
+      <li><strong>F</strong> / <strong>Flash</strong> Toggle flashlight</li>
+      <li><strong>R</strong> / <strong>Rec</strong> Record environment</li>
+      <li><strong>E</strong> / <strong>Analyze</strong> Analyze latest recording</li>
+      <li><strong>Esc</strong> Release cursor (desktop)</li>
+    </ul>
+    <button id="startBtn">Enter Forest</button>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div id="status">Status: Listening...</div>
+    <div id="recorder">Recorder: Idle</div>
+    <div id="clue">Clues: 0/5</div>
+    <div id="hint">Find wooden symbols and capture hidden voices.</div>
+  </div>
+
+  <div id="touchControls" class="hidden">
+    <div id="joystickZone">
+      <div id="joystickBase"></div>
+      <div id="joystickKnob"></div>
+    </div>
+    <div id="lookZone"></div>
+    <div id="mobileButtons">
+      <button id="btnRecord">Rec</button>
+      <button id="btnAnalyze">Analyze</button>
+      <button id="btnFlash">Flash</button>
+      <button id="btnSprint">Jog</button>
+    </div>
+  </div>
+
+  <div id="message" class="hidden"></div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+:root {
+  color-scheme: dark;
+  --panel: rgba(10, 12, 18, 0.8);
+  --text: #d7dde8;
+  --accent: #6cc4ff;
+  --danger: #ff6b81;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: #020306;
+  touch-action: none;
+}
+
+canvas {
+  display: block;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 0.8rem;
+  width: min(700px, 92vw);
+  margin: auto;
+  height: fit-content;
+  padding: 1.5rem;
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  z-index: 20;
+}
+
+#overlay h1 {
+  margin: 0;
+  letter-spacing: 0.18em;
+  color: var(--danger);
+}
+
+#overlay p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+#overlay ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.5;
+}
+
+#startBtn,
+#mobileButtons button {
+  border: 1px solid var(--accent);
+  background: rgba(108, 196, 255, 0.12);
+  color: var(--text);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+}
+
+#startBtn {
+  justify-self: start;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#hud {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem;
+  min-width: 230px;
+  backdrop-filter: blur(2px);
+  max-width: min(94vw, 380px);
+}
+
+#hud > div {
+  margin: 0.2rem 0;
+}
+
+#message {
+  position: fixed;
+  left: 50%;
+  bottom: max(2rem, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  padding: 0.6rem 1rem;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  z-index: 9;
+}
+
+#touchControls {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 11;
+}
+
+#joystickZone,
+#lookZone,
+#mobileButtons {
+  pointer-events: auto;
+}
+
+#joystickZone {
+  position: absolute;
+  left: max(1rem, env(safe-area-inset-left));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  width: 140px;
+  height: 140px;
+}
+
+#joystickBase,
+#joystickKnob {
+  position: absolute;
+  border-radius: 50%;
+}
+
+#joystickBase {
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#joystickKnob {
+  width: 62px;
+  height: 62px;
+  left: 39px;
+  top: 39px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(108, 196, 255, 0.22);
+  transition: transform 0.03s linear;
+}
+
+#lookZone {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+}
+
+#mobileButtons {
+  position: absolute;
+  right: max(0.8rem, env(safe-area-inset-right));
+  bottom: max(0.8rem, env(safe-area-inset-bottom));
+  display: grid;
+  gap: 0.45rem;
+}
+
+#mobileButtons button {
+  min-width: 96px;
+  text-transform: uppercase;
+}
+
+#btnSprint.active,
+#btnFlash.active {
+  border-color: var(--danger);
+  background: rgba(255, 107, 129, 0.2);
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  #overlay {
+    width: 94vw;
+    padding: 1rem;
+  }
+
+  #overlay ul {
+    font-size: 0.92rem;
+  }
+
+  #hud {
+    top: 0.6rem;
+    left: 0.6rem;
+    font-size: 0.9rem;
+    padding: 0.55rem;
+    min-width: 0;
+  }
+
+  #joystickZone {
+    width: 124px;
+    height: 124px;
+  }
+
+  #joystickKnob {
+    width: 54px;
+    height: 54px;
+    left: 35px;
+    top: 35px;
+  }
+
+  #mobileButtons button {
+    min-width: 82px;
+    padding: 0.55rem 0.65rem;
+    font-size: 0.8rem;
+  }
+}
