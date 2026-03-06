@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whisper Log - Forest Recording Horror</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="overlay">
+    <h1>WHISPER LOG</h1>
+    <p>You are an audio recorder investigating disappearances linked to an ancient witch.</p>
+    <ul>
+      <li><strong>WASD</strong> Move</li>
+      <li><strong>Mouse</strong> Look around</li>
+      <li><strong>Shift</strong> Jog</li>
+      <li><strong>F</strong> Toggle flashlight</li>
+      <li><strong>R</strong> Record environment</li>
+      <li><strong>E</strong> Analyze latest recording</li>
+      <li><strong>Esc</strong> Release cursor</li>
+    </ul>
+    <button id="startBtn">Enter Forest</button>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div id="status">Status: Listening...</div>
+    <div id="recorder">Recorder: Idle</div>
+    <div id="clue">Clues: 0/5</div>
+    <div id="hint">Find wooden symbols and capture hidden voices.</div>
+  </div>
+
+  <div id="message" class="hidden"></div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
