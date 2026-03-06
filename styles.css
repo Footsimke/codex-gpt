@@ -1,0 +1,98 @@
+:root {
+  color-scheme: dark;
+  --panel: rgba(10, 12, 18, 0.8);
+  --text: #d7dde8;
+  --accent: #6cc4ff;
+  --danger: #ff6b81;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background: #020306;
+}
+
+canvas {
+  display: block;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 0.8rem;
+  width: min(700px, 92vw);
+  margin: auto;
+  height: fit-content;
+  padding: 1.5rem;
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+#overlay h1 {
+  margin: 0;
+  letter-spacing: 0.18em;
+  color: var(--danger);
+}
+
+#overlay p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+#overlay ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.5;
+}
+
+#startBtn {
+  justify-self: start;
+  border: 1px solid var(--accent);
+  background: rgba(108, 196, 255, 0.1);
+  color: var(--text);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#hud {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem;
+  min-width: 230px;
+  backdrop-filter: blur(2px);
+}
+
+#hud > div {
+  margin: 0.2rem 0;
+}
+
+#message {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  padding: 0.6rem 1rem;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  z-index: 6;
+}
+
+.hidden {
+  display: none !important;
+}
